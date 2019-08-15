@@ -1,0 +1,53 @@
+ion-title {
+  color: white;
+  &.headerTitleH {
+    margin-top: 10px;
+  }
+  &.titleHome {
+    color: white;
+  }
+}
+
+ion-fab {
+  &.fabLang {
+    margin-top: 150px;
+    margin-left: 10px;
+  }
+  &.fabType {
+    margin-top: 250px;
+    margin-left: 10px;
+  }
+}
+
+button {
+  width: 200px;
+}
+
+ion-footer {
+  &.button-footer-bar-h {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+}
+
+ion-content {
+  &.contentContainerH {
+    background-image: linear-gradient(#8f8f8f, white);
+  }
+}
+h4 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+p {
+  &.pH {
+    color: white;
+  }
+}

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="headerTitleS">
+      Series
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content paddin no-bounce class="contentContainers">
+  <ion-slides>
+    <ion-slide *ngFor="let film of listFilmes">
+      <ion-card (click)="description()" class="cardContainers">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + film.backdrop_path" />
+        <ion-card-title class="titles">
+          {{ film.name }}
+        </ion-card-title>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer class="button-footer-bar-s">
+  <button
+    ion-button
+    icon-only
+    class="button button-stable bbs"
+    (click)="reLoad()"
+  >
+    <ion-icon name="refresh"></ion-icon>
+  </button>
+</ion-footer>
