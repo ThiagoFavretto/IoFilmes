@@ -11,19 +11,19 @@ import { Injectable } from "@angular/core";
 export class ApiProvider {
   baseUrl = "https://api.themoviedb.org/3/";
   key = "?api_key=602050a8e437c2ccaa9dced6039e27e2";
-  page = "&page=1";
-  type;
-  lang = "&language=en";
   constructor(public http: Http) {}
 
-  getMovies(nP?, type = "movie", lang?) {
-    this.page = `&page=${nP}`;
+  getMovies(nP, type = "movie", lang = "en") {
+    let page = `&page=${nP}`;
     console.log(nP);
-    this.type = type;
-    console.log(this.type);
-    this.lang = `&language=${lang}`;
+    let langT = `&language=${lang}`;
     return this.http.get(
-      this.baseUrl + "discover/" + this.type + this.key + this.page + this.lang
+      `${this.baseUrl}discover/${type}${this.key}${page}${langT}`
     );
+  }
+
+  getDesc(id, lang, type) {
+    let langT = `&language=${lang}`;
+    return this.http.get(`${this.baseUrl}${type}/${id}${this.key}${langT}`);
   }
 }

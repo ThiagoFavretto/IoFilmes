@@ -20,7 +20,19 @@ ion-fab {
 }
 
 button {
-  width: 200px;
+  &.hButton {
+    background-color: #140b0b;
+    height: 45px;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.hButton:active {
+    background-color: #080303;
+  }
 }
 
 ion-footer {
@@ -31,13 +43,13 @@ ion-footer {
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
 }
 
 ion-content {
   &.contentContainerH {
-    background-image: linear-gradient(#8f8f8f, white);
+    background-image: linear-gradient(black, #3b0b0b);
   }
 }
 h4 {

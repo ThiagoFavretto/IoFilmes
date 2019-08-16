@@ -9,7 +9,7 @@
 <ion-content paddin no-bounce class="contentContainer">
   <ion-slides>
     <ion-slide *ngFor="let film of listFilmes">
-      <ion-card (click)="description()" class="cardContainer">
+      <ion-card (click)="description(film)" class="cardContainer">
         <img [src]="'https://image.tmdb.org/t/p/w500/' + film.backdrop_path" />
         <ion-card-title class="title">
           {{ film.title }}
@@ -20,12 +20,7 @@
 </ion-content>
 
 <ion-footer class="button-footer-bar-f">
-  <button
-    ion-button
-    icon-only
-    class="button button-stable bb"
-    (click)="reLoad()"
-  >
+  <button icon-only class="bb" (click)="reLoad()">
     <ion-icon name="refresh"></ion-icon>
   </button>
 </ion-footer>

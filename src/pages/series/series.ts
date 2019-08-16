@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ApiProvider } from "../../providers/api/api";
+import { SerieDetalhePage } from "../serie-detalhe/serie-detalhe";
 /**
  * Generated class for the TvPage page.
  *
@@ -25,7 +26,6 @@ export class SeriesPage {
     let t = navParams.get("t");
     this.type = t;
     this.lang = l;
-    console.log(this.type);
   }
 
   listFilmes = new Array<any>();
@@ -59,7 +59,12 @@ export class SeriesPage {
     }
   }
 
-  description() {}
+  description(filme) {
+    this.navCtrl.push(SerieDetalhePage, {
+      id: filme.id,
+      l: this.lang
+    });
+  }
 
   reLoad() {
     this.pg++;

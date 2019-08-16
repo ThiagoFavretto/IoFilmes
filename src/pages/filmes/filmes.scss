@@ -12,7 +12,7 @@ ion-footer {
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
 }
 
@@ -31,15 +31,22 @@ ion-content {
 
 ion-card {
   &.cardContainer {
-    background-color: #850000da;
+    background-color: #3b0b0b;
   }
 }
 
 button {
   &.bb {
     background-color: #3b0b0b;
+    height: 45px;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &.bb:active {
-    background-color: #3b0b0b;
+    background-color: #220707;
   }
 }

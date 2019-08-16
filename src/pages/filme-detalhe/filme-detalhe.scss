@@ -1,0 +1,58 @@
+ion-title {
+  &.headerTitleFD {
+    margin-top: 10px;
+  }
+}
+ion-content {
+  &.contentContainerFD {
+    background-image: linear-gradient(#2e2e2e, #121010);
+  }
+}
+
+ion-card-title {
+  &.titleD {
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+  }
+}
+
+ion-card {
+  &.cardD {
+    background-color: #850000da;
+  }
+  &.carDes {
+    background-color: #dddddd;
+  }
+  &.carInfo {
+    background-color: #111111;
+  }
+}
+
+p {
+  &.pD {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+  }
+  &.TO {
+    color: white;
+    padding: 5px;
+  }
+  &.Si {
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600px;
+  }
+  &.tiF {
+    color: white;
+    padding: 2px 0;
+    margin-left: 5px;
+    margin-right: 1px;
+    font-weight: 300px;
+    font-size: 18px;
+    border-bottom: 1px solid #c5c5c5;
+  }
+}

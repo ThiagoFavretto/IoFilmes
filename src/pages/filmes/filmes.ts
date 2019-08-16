@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ApiProvider } from "../../providers/api/api";
+import { FilmeDetalhePage } from "../filme-detalhe/filme-detalhe";
 
 @Component({
   selector: "page-filmes",
@@ -19,7 +20,6 @@ export class FilmesPage {
     let t = navParams.get("t");
     this.type = t;
     this.lang = l;
-    console.log(this.type);
   }
 
   listFilmes = new Array<any>();
@@ -31,7 +31,6 @@ export class FilmesPage {
   }
 
   apiOn() {
-    console.log(this.lang, this.type);
     this.filmes.getMovies(this.pg, this.type, this.lang).subscribe(
       data => {
         const dat = data as any;
@@ -54,7 +53,12 @@ export class FilmesPage {
     }
   }
 
-  description() {}
+  description(filme) {
+    this.navCtrl.push(FilmeDetalhePage, {
+      id: filme.id,
+      l: this.lang
+    });
+  }
 
   reLoad() {
     this.pg++;
