@@ -1,10 +1,6 @@
 ion-title {
-  color: white;
   &.headerTitleH {
     margin-top: 10px;
-  }
-  &.titleHome {
-    color: white;
   }
 }
 
@@ -20,7 +16,7 @@ ion-fab {
 }
 
 button {
-  &.hButton {
+  &.buttonH {
     background-color: #140b0b;
     height: 45px;
     color: white;
@@ -30,13 +26,13 @@ button {
     align-items: center;
     justify-content: center;
   }
-  &.hButton:active {
+  &.buttonH:active {
     background-color: #080303;
   }
 }
 
 ion-footer {
-  &.button-footer-bar-h {
+  &.footerH {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -52,14 +48,26 @@ ion-content {
     background-image: linear-gradient(black, #3b0b0b);
   }
 }
+
 h4 {
-  color: white;
+  &.h4H {
+    color: white;
+  }
 }
+
 h2 {
-  color: white;
+  &.h2H {
+    color: white;
+  }
 }
+
 p {
   &.pH {
     color: white;
+  }
+  &.titleH {
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
   }
 }

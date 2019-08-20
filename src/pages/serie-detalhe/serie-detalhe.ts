@@ -2,13 +2,6 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { ApiProvider } from "../../providers/api/api";
 
-/**
- * Generated class for the SerieDetalhePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: "page-serie-detalhe",
@@ -22,7 +15,7 @@ export class SerieDetalhePage {
   list;
   constructor(
     public navCtrl: NavController,
-    public filmes: ApiProvider,
+    public series: ApiProvider,
     public navParams: NavParams
   ) {
     let id = navParams.get("id");
@@ -33,7 +26,7 @@ export class SerieDetalhePage {
   }
 
   ionViewDidLoad() {
-    this.filmes.getDesc(this.id, this.lang, "tv").subscribe(
+    this.series.getDesc(this.id, this.lang, "tv").subscribe(
       data => {
         const dat = data as any;
         this.desc = JSON.parse(dat._body);
@@ -47,8 +40,8 @@ export class SerieDetalhePage {
 
   gen(genr) {
     let ax = "";
-    for (let g of genr) {
-      ax += `${g.name}, `;
+    for (let gen of genr) {
+      ax += `${gen.name}, `;
     }
     this.list = ax.substring(0, ax.length - 2);
   }

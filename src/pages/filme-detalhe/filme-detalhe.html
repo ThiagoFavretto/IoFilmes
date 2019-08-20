@@ -11,43 +11,35 @@
 </ion-header>
 
 <ion-content padding class="contentContainerFD" *ngIf="desc">
-  <ion-card class="cardD">
+  <ion-card class="cardFD">
     <img [src]="'https://image.tmdb.org/t/p/w300/' + desc.backdrop_path" />
-    <p class="TO">
+    <p class="orginalFD">
       Título original:
     </p>
-    <ion-card-title class="titleD">
+    <ion-card-title class="titleFD">
       {{ desc.original_title }}
     </ion-card-title>
   </ion-card>
-  <ion-card class="carDes">
-    <p class="Si">
+  <ion-card class="cardDescFD">
+    <p class="sinopseFD">
       Sinopse:
     </p>
-    <p class="pD">
+    <p class="overviewFD">
       {{ desc.overview }}
     </p>
   </ion-card>
-  <ion-card class="carInfo">
-    <p class="tiF">
+  <ion-card class="cardInfoFD">
+    <p class="descTextFD">
       <b>Genero:</b>
       {{ list }}
     </p>
-    <p class="tiF">
+    <p class="descTextFD">
       <b>Data de lançamento:</b>
       {{ desc.release_date }}
     </p>
-    <p class="tiF">
+    <p class="descTextFD">
       <b>Duraçao:</b>
       {{ desc.runtime }}m
-    </p>
-    <p class="tiF">
-      <b>Popularidade:</b>
-      {{ desc.vote_average }}/10
-    </p>
-    <p class="tiF">
-      de
-      {{ desc.vote_count }} votos
     </p>
   </ion-card>
 </ion-content>

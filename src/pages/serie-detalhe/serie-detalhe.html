@@ -11,60 +11,52 @@
 </ion-header>
 
 <ion-content padding class="contentContainerSD" *ngIf="desc">
-  <ion-card class="cardDS">
+  <ion-card class="cardSD">
     <img [src]="'https://image.tmdb.org/t/p/w500/' + desc.backdrop_path" />
-    <p class="TOS">
+    <p class="originalSD">
       Título original:
     </p>
-    <ion-card-title class="titleDS">
+    <ion-card-title class="titleSD">
       {{ desc.original_name }}
     </ion-card-title>
   </ion-card>
-  <ion-card class="carSDes">
-    <p class="SiS">
+  <ion-card class="cardDescSD">
+    <p class="sinopseSD">
       Sinopse:
     </p>
-    <p class="pDS">
+    <p class="overviewSD">
       {{ desc.overview }}
     </p>
   </ion-card>
-  <ion-card class="carSInfo">
-    <p class="tiS">
-      <b>Status:</b>
-      {{ desc.status == "Ended" ? "Encerada" : "Em andamento" }}
-    </p>
-    <p class="tiS">
+  <ion-card class="cardInfoSD">
+    <p class="descTextSD">
       <b>Genero:</b>
       {{ list }}
     </p>
-    <p class="tiS">
+    <p class="descTextSD">
       <b>Data de lançamento:</b>
       {{ desc.first_air_date }}
     </p>
-    <p class="tiS">
+    <p class="descTextSD">
       <b>Duraçao dos episodios:</b>
       {{ desc.episode_run_time }}m
     </p>
-    <p class="tiS">
+    <p class="descTextSD">
       <b>Ultimo episodio lançado:</b>
       {{ desc.last_episode_to_air.name }} -
       {{ desc.last_air_date }}
     </p>
-    <p class="tiS">
+    <p class="descTextSD">
       <b>Número de episodios:</b>
       {{ desc.number_of_episodes }}
     </p>
-    <p class="tiS">
+    <p class="descTextSD">
       <b>Número de Temporadas:</b>
       {{ desc.number_of_seasons }}
     </p>
-    <p class="tiS">
-      <b>Popularidade:</b>
-      {{ desc.vote_average }}/10
-    </p>
-    <p class="tiS">
-      de
-      {{ desc.vote_count }} votos
+    <p class="descTextSD">
+      <b>Cituaçao:</b>
+      {{ desc.status == "Ended" ? "Encerada" : "Em andamento" }}
     </p>
   </ion-card>
 </ion-content>

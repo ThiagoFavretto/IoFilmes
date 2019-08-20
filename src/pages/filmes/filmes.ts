@@ -45,7 +45,6 @@ export class FilmesPage {
   }
 
   removeNull() {
-    this.listFilmes = [];
     for (var cont in this.results) {
       if (this.results[cont].backdrop_path != null) {
         this.listFilmes.push(this.results[cont]);
@@ -63,5 +62,11 @@ export class FilmesPage {
   reLoad() {
     this.pg++;
     this.apiOn();
+  }
+
+  flag = false; // resolve um bug(????)
+  getNext() {
+    if (this.flag) this.reLoad();
+    else this.flag = true;
   }
 }

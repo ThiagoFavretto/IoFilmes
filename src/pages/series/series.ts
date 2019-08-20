@@ -2,12 +2,6 @@ import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ApiProvider } from "../../providers/api/api";
 import { SerieDetalhePage } from "../serie-detalhe/serie-detalhe";
-/**
- * Generated class for the TvPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: "page-series",
@@ -19,7 +13,7 @@ export class SeriesPage {
   lang;
   constructor(
     public navCtrl: NavController,
-    public filmes: ApiProvider,
+    public series: ApiProvider,
     public navParams: NavParams
   ) {
     let l = navParams.get("l");
@@ -28,7 +22,7 @@ export class SeriesPage {
     this.lang = l;
   }
 
-  listFilmes = new Array<any>();
+  listSeries = new Array<any>();
   results = new Array<any>();
   pg = 1;
 
@@ -37,7 +31,7 @@ export class SeriesPage {
   }
 
   apiOn() {
-    this.filmes.getMovies(this.pg, this.type, this.lang).subscribe(
+    this.series.getMovies(this.pg, this.type, this.lang).subscribe(
       data => {
         const dat = data as any;
         const ress = JSON.parse(dat._body);
@@ -51,17 +45,16 @@ export class SeriesPage {
   }
 
   removeNull() {
-    this.listFilmes = [];
     for (var cont in this.results) {
       if (this.results[cont].backdrop_path != null) {
-        this.listFilmes.push(this.results[cont]);
+        this.listSeries.push(this.results[cont]);
       }
     }
   }
 
-  description(filme) {
+  description(serie) {
     this.navCtrl.push(SerieDetalhePage, {
-      id: filme.id,
+      id: serie.id,
       l: this.lang
     });
   }
@@ -69,5 +62,11 @@ export class SeriesPage {
   reLoad() {
     this.pg++;
     this.apiOn();
+  }
+
+  flag = false; // resolve um bug(????)
+  getNext() {
+    if (this.flag) this.reLoad();
+    else this.flag = true;
   }
 }

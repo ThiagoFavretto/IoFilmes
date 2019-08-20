@@ -1,26 +1,30 @@
-<ion-header class="headerFilmes">
+<ion-header>
   <ion-navbar>
-    <ion-title class="headerTitle">
+    <ion-title class="headerTitleF">
       Filmes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content paddin no-bounce class="contentContainer">
-  <ion-slides>
-    <ion-slide *ngFor="let film of listFilmes">
-      <ion-card (click)="description(film)" class="cardContainer">
-        <img [src]="'https://image.tmdb.org/t/p/w500/' + film.backdrop_path" />
-        <ion-card-title class="title">
-          {{ film.title }}
+<ion-content paddin no-bounce class="contentContainerF">
+  <ion-slides (ionSlideReachEnd)="getNext()">
+    <ion-slide *ngFor="let filme of listFilmes">
+      <ion-card (click)="description(filme)" class="cardContainerF">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path" />
+        <ion-card-title class="titleF">
+          {{ filme.title }}
         </ion-card-title>
+        <div class="descF">
+          <p class="pTopF">
+            <b>Popularidade:</b>
+            {{ filme.vote_average }}/10
+          </p>
+          <p class="pBotF">
+            de
+            {{ filme.vote_count }} votos
+          </p>
+        </div>
       </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>
-
-<ion-footer class="button-footer-bar-f">
-  <button icon-only class="bb" (click)="reLoad()">
-    <ion-icon name="refresh"></ion-icon>
-  </button>
-</ion-footer>

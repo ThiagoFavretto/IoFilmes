@@ -1,57 +1,47 @@
 <ion-header>
-  <ion-navbar class="teste">
+  <ion-navbar>
     <ion-title class="headerTitleH">Main</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding no-bounce class="contentContainerH">
+<ion-content padding class="contentContainerH">
   <h2 class="h2H">IoFilm</h2>
   <p class="pH">
     Catalago de filmes
   </p>
-  <ion-title class="titleHome">
-    <h4>Configure aqui a sua busca</h4>
-  </ion-title>
+  <h4 class="h4H">Configure aqui a sua busca</h4>
 
-  <ion-fab class="fabLang">
-    <button ion-fab color="light">
-      <ion-icon name="arrow-dropright"></ion-icon>
-    </button>
-    <ion-fab-list side="right">
-      <ion-list radio-group [(ngModel)]="lang">
-        <ion-item>
-          <ion-label>eng</ion-label>
-          <ion-radio value="en"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>pt-BR</ion-label>
-          <ion-radio value="pt-BR"></ion-radio>
-        </ion-item>
-      </ion-list>
-    </ion-fab-list>
-  </ion-fab>
+  <ion-list radio-group [(ngModel)]="type">
+    <p class="titleH">Tipo</p>
+    <ion-item>
+      <ion-label>Filmes</ion-label>
+      <ion-radio value="movie"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Series</ion-label>
+      <ion-radio value="tv"></ion-radio>
+    </ion-item>
+  </ion-list>
 
-  <ion-fab class="fabType">
-    <button ion-fab color="light">
-      <ion-icon name="arrow-dropright"></ion-icon>
-    </button>
-    <ion-fab-list side="right">
-      <ion-list radio-group [(ngModel)]="type">
-        <ion-item>
-          <ion-label>Filmes</ion-label>
-          <ion-radio value="movie"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Series</ion-label>
-          <ion-radio value="tv"></ion-radio>
-        </ion-item>
-      </ion-list>
-    </ion-fab-list>
-  </ion-fab>
+  <ion-list radio-group [(ngModel)]="lang">
+    <p class="titleH">Linguagem</p>
+    <ion-item>
+      <ion-label>en</ion-label>
+      <ion-radio value="en"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>pt</ion-label>
+      <ion-radio value="pt-BR"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>ja</ion-label>
+      <ion-radio value="ja"></ion-radio>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
-<ion-footer class="button-footer-bar-h">
-  <button class="hButton" (click)="save()">
+<ion-footer class="footerH">
+  <button class="buttonH" (click)="save()">
     Save
   </button>
 </ion-footer>

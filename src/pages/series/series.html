@@ -6,21 +6,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content paddin no-bounce class="contentContainers">
-  <ion-slides>
-    <ion-slide *ngFor="let film of listFilmes">
-      <ion-card (click)="description(film)" class="cardContainers">
-        <img [src]="'https://image.tmdb.org/t/p/w500/' + film.backdrop_path" />
-        <ion-card-title class="titles">
-          {{ film.name }}
+<ion-content paddin no-bounce class="contentContainerS">
+  <ion-slides (ionSlideReachEnd)="getNext()">
+    <ion-slide *ngFor="let serie of listSeries">
+      <ion-card (click)="description(serie)" class="cardContainerS">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + serie.backdrop_path" />
+        <ion-card-title class="titleS">
+          {{ serie.name }}
         </ion-card-title>
+        <div class="descS">
+          <p class="pTopS">
+            <b>Popularidade:</b>
+            {{ serie.vote_average }}/10
+          </p>
+          <p class="pBotS">
+            de
+            {{ serie.vote_count }} votos
+          </p>
+        </div>
       </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>
-
-<ion-footer class="button-footer-bar-s">
-  <button icon-only class="bbs" (click)="reLoad()">
-    <ion-icon name="refresh"></ion-icon>
-  </button>
-</ion-footer>

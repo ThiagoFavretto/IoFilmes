@@ -10,7 +10,7 @@ ion-content {
 }
 
 ion-card-title {
-  &.titleDS {
+  &.titleSD {
     font-size: 24px;
     color: white;
     margin-left: 20px;
@@ -18,35 +18,35 @@ ion-card-title {
 }
 
 ion-card {
-  &.cardDS {
-    background-color: #850000da;
+  &.cardSD {
+    background-color: #3b0b0b;
   }
-  &.carSDes {
+  &.cardDescSD {
     background-color: #dddddd;
   }
-  &.carSInfo {
+  &.cardInfoSD {
     background-color: #111111;
   }
 }
 
 p {
-  &.pDS {
+  &.overviewSD {
     padding: 10px;
     font-size: 16px;
     font-weight: 500;
     color: black;
   }
-  &.TOS {
+  &.originalSD {
     color: white;
     padding: 5px;
   }
-  &.SiS {
+  &.sinopseSD {
     padding: 5px;
     color: black;
     font-size: 18px;
     font-weight: 600px;
   }
-  &.tiS {
+  &.descTextSD {
     color: white;
     padding: 2px 0;
     margin-left: 5px;
